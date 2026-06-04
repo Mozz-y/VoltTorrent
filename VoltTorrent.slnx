@@ -7,4 +7,11 @@
     <Project Path="src/VoltTorrent.Storage/VoltTorrent.Storage.csproj" />
     <Project Path="src/VoltTorrent.Tracker/VoltTorrent.Tracker.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/VoltTorrent.Bencode.Tests/VoltTorrent.Bencode.Tests.csproj" />
+    <Project Path="tests/VoltTorrent.Core.Tests/VoltTorrent.Core.Tests.csproj" />
+    <Project Path="tests/VoltTorrent.P2P.Tests/VoltTorrent.P2P.Tests.csproj" />
+    <Project Path="tests/VoltTorrent.Storage.Tests/VoltTorrent.Storage.Tests.csproj" />
+    <Project Path="tests/VoltTorrent.Tracker.Tests/VoltTorrent.Tracker.Tests.csproj" />
+  </Folder>
 </Solution>
