@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/VoltTorrent.App/VoltTorrent.App.csproj" />
+    <Project Path="src/VoltTorrent.Bencode/VoltTorrent.Bencode.csproj" />
+    <Project Path="src/VoltTorrent.Core/VoltTorrent.Core.csproj" />
+    <Project Path="src/VoltTorrent.P2P/VoltTorrent.P2P.csproj" />
+    <Project Path="src/VoltTorrent.Storage/VoltTorrent.Storage.csproj" />
+    <Project Path="src/VoltTorrent.Tracker/VoltTorrent.Tracker.csproj" />
+  </Folder>
+</Solution>
