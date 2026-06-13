@@ -9,9 +9,13 @@ public enum BencodeParseErrorKind
     EmptyInput,
     InvalidToken,
     MissingTerminator,
+    MissingSeparator,
+    EmptyByteStringLength,
     EmptyInteger,
+    InvalidByteStringLength,
     InvalidInteger,
     LeadingZero,
     NegativeZero,
-    Overflow
+    Overflow,
+    TruncatedByteString
 }
