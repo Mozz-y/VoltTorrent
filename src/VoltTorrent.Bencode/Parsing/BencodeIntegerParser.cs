@@ -13,7 +13,7 @@ public static class BencodeIntegerParser
     /// <param name="bytesConsumed">The number of bytes consumed when parsing succeeds.</param>
     /// <param name="error">The parse error when parsing fails.</param>
     /// <returns><c>true</c> when an integer was parsed successfully; otherwise, <c>false</c>.</returns>
-    public static bool TryParse(ReadOnlySpan<byte> input, out BencodeInteger value, out int bytesConsumed, out BencodeParseError error)
+    public static bool TryParse(ReadOnlySpan<byte> input, out BencodeIntegerValue value, out int bytesConsumed, out BencodeParseError error)
     {
         value = default;
         bytesConsumed = 0;
@@ -90,6 +90,7 @@ public static class BencodeIntegerParser
                     error = new BencodeParseError(BencodeParseErrorKind.Overflow, 1 + index, "Bencoded integer is smaller than Int64.MinValue.");
                     return false;
                 }
+
                 parsedValue = (parsedValue * 10) - digit;
             }
             else
@@ -99,11 +100,12 @@ public static class BencodeIntegerParser
                     error = new BencodeParseError(BencodeParseErrorKind.Overflow, 1 + index, "Bencoded integer is larger than Int64.MaxValue.");
                     return false;
                 }
+
                 parsedValue = (parsedValue * 10) + digit;
             }
         }
 
-        value = new BencodeInteger(parsedValue);
+        value = new BencodeIntegerValue(parsedValue);
         bytesConsumed = parsedBytesConsumed;
         return true;
     }

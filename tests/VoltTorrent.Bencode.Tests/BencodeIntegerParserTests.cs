@@ -40,7 +40,7 @@ public sealed class BencodeIntegerParserTests
         var result = BencodeIntegerParser.TryParse(bytes, out var value, out var bytesConsumed, out var error);
 
         result.Should().BeFalse();
-        value.Should().Be(default(BencodeInteger));
+        value.Should().Be(default(BencodeIntegerValue));
         bytesConsumed.Should().Be(0);
         error.Kind.Should().NotBe(BencodeParseErrorKind.None);
     }

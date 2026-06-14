@@ -13,7 +13,7 @@ public static class BencodeByteStringParser
     /// <param name="bytesConsumed">The number of bytes consumed when parsing succeeds.</param>
     /// <param name="error">The parse error when parsing fails.</param>
     /// <returns><c>true</c> when a byte string was parsed successfully; otherwise, <c>false</c>.</returns>
-    public static bool TryParse(ReadOnlyMemory<byte> input, out BencodeByteString value, out int bytesConsumed, out BencodeParseError error)
+    public static bool TryParse(ReadOnlyMemory<byte> input, out BencodeByteStringValue value, out int bytesConsumed, out BencodeParseError error)
     {
         value = default;
         bytesConsumed = 0;
@@ -83,7 +83,7 @@ public static class BencodeByteStringParser
 
         var totalBytesConsumed = payloadStart + byteStringLength;
 
-        value = new BencodeByteString(input.Slice(payloadStart, byteStringLength));
+        value = new BencodeByteStringValue(input.Slice(payloadStart, byteStringLength));
         bytesConsumed = totalBytesConsumed;
 
         return true;

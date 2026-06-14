@@ -4,8 +4,10 @@ namespace VoltTorrent.Bencode;
 /// Represents a parsed bencoded byte string value.
 /// </summary>
 /// <param name="Value">The decoded byte string payload.</param>
-public readonly record struct BencodeByteString(ReadOnlyMemory<byte> Value)
+public readonly record struct BencodeByteStringValue(ReadOnlyMemory<byte> Value)
 {
-    // Gets the number of bytes in the byte string payload.
+    /// <summary>
+    /// Gets the number of bytes in the byte string payload.
+    /// </summary>
     public int Length => Value.Length;
 }

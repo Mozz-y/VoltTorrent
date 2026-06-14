@@ -8,6 +8,8 @@ namespace VoltTorrent.Bencode;
 /// <param name="Message">A human-readable explanation of the error.</param>
 public readonly record struct BencodeParseError(BencodeParseErrorKind Kind, int Offset, string Message)
 {
-    // Gets an empty parse error value used when parsing succeeds.
+    /// <summary>
+    /// Gets an empty parse error value used when parsing succeeds.
+    /// </summary>
     public static BencodeParseError None { get; } = new BencodeParseError(BencodeParseErrorKind.None, -1, string.Empty);
 }
