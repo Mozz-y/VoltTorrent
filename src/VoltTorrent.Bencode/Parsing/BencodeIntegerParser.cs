@@ -105,7 +105,7 @@ public static class BencodeIntegerParser
             }
         }
 
-        value = new BencodeIntegerValue(parsedValue);
+        value = new BencodeIntegerValue(parsedValue, new BencodeSourceRange(0, parsedBytesConsumed));
         bytesConsumed = parsedBytesConsumed;
         return true;
     }

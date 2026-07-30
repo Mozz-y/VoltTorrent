@@ -17,5 +17,10 @@ public enum BencodeParseErrorKind
     LeadingZero,
     NegativeZero,
     Overflow,
-    TruncatedByteString
+    TruncatedByteString,
+    UnterminatedList,
+    UnterminatedDictionary,
+    InvalidDictionaryKey,
+    UnsortedDictionaryKeys,
+    MaxDepthExceeded
 }

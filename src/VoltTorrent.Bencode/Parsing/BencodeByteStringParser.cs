@@ -83,7 +83,7 @@ public static class BencodeByteStringParser
 
         var totalBytesConsumed = payloadStart + byteStringLength;
 
-        value = new BencodeByteStringValue(input.Slice(payloadStart, byteStringLength));
+        value = new BencodeByteStringValue(input.Slice(payloadStart, byteStringLength), new BencodeSourceRange(0, totalBytesConsumed));
         bytesConsumed = totalBytesConsumed;
 
         return true;
